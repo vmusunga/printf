@@ -6,7 +6,7 @@
 /*   By: vmusunga <vmusunga@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 15:13:41 by vmusunga          #+#    #+#             */
-/*   Updated: 2021/03/03 10:43:14 by vmusunga         ###   ########.fr       */
+/*   Updated: 2021/03/03 15:56:17 by vmusunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,16 @@ void		ft_putstr_fd(char *s, int fd)
 		write(fd, &s[i], 1);
 		i++;
 	}
+}
+
+int		ft_strcmp_pos(char *s1, char c)
+{
+	int a;
+	
+	a = 0;
+	while (s1[a] && s1[a] != c)
+		a++;
+	return (a);
 }
 
 static int	ft_overflow(unsigned long long x, int sign)
