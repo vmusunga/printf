@@ -6,7 +6,7 @@
 /*   By: vmusunga <vmusunga@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 12:23:15 by vmusunga          #+#    #+#             */
-/*   Updated: 2021/03/22 15:38:37 by vmusunga         ###   ########.fr       */
+/*   Updated: 2021/03/22 16:40:17 by vmusunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,9 @@ int		ft_atoi(const char *str);
 int		ft_flags(const char *str, int *i, va_list v_list);
 int		ft_s_flag(char *s);
 int		ft_c_flag(char c);
-int		ft_p_flag(char c);
+int		ft_p_flag(unsigned long);
+
+void	ft_putnbr_base(int nbr, char *base);
 
 char	*ft_strdup(const char *s1);
 char	*ft_strjoin(char *s1, char *s2);
