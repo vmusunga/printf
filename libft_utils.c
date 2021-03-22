@@ -6,7 +6,7 @@
 /*   By: vmusunga <vmusunga@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 15:13:41 by vmusunga          #+#    #+#             */
-/*   Updated: 2021/03/03 15:56:17 by vmusunga         ###   ########.fr       */
+/*   Updated: 2021/03/22 15:36:12 by vmusunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,8 @@ int		ft_strcmp_pos(char *s1, char c)
 	int a;
 	
 	a = 0;
+	if (!s1)
+		return (-1);
 	while (s1[a] && s1[a] != c)
 		a++;
 	return (a);
