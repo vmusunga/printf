@@ -6,7 +6,7 @@
 /*   By: vmusunga <vmusunga@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 15:13:41 by vmusunga          #+#    #+#             */
-/*   Updated: 2021/03/22 15:44:40 by vmusunga         ###   ########.fr       */
+/*   Updated: 2021/03/23 12:57:26 by vmusunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,35 +22,33 @@ size_t		ft_strlen(const char *str)
 	return (x);
 }
 
-void		ft_putchar_fd(char c, int fd)
+void		ft_putchar(char c, t_flags *flags)
 {
-	write(fd, &c, 1);
+	write(1, &c, 1);
+	flags->count++;
 }
 
-void		ft_putstr_fd(char *s, int fd)
+void		ft_putstr(char *s, t_flags *flags)
 {
 	int i;
 
 	i = 0;
 	if ((!s))
 		return ;
+	flags->count += ft_strlen(s);
 	while (s[i])
 	{
-		write(fd, &s[i], 1);
+		write(1, &s[i], 1);
 		i++;
 	}
 }
 
-int		ft_strcmp_pos(char *s1, char c)
+int	ft_isdigit(char c)
 {
-	int a;
-	
-	a = 0;
-	if (!s1)
-		return (-1);
-	while (s1[a] && s1[a] != c)
-		a++;
-	return (a);
+	if ( c >= '0' && c <= '9')
+		return (1);
+	else
+		return (0);
 }
 
 static int	ft_overflow(unsigned long long x, int sign)
