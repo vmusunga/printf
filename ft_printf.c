@@ -6,7 +6,7 @@
 /*   By: vmusunga <vmusunga@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 12:25:08 by vmusunga          #+#    #+#             */
-/*   Updated: 2021/03/23 13:09:40 by vmusunga         ###   ########.fr       */
+/*   Updated: 2021/03/23 16:25:43 by vmusunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int		ft_printf(const char *str, ...)
 	t_flags *flags;
 
 	i = 0;
-	flags = malloc(sizeof(t_flags) + 1);
+	flags = malloc(sizeof(t_flags));
 	ft_struct_init(flags);
 	va_start (v_list, str);
 	while (str[i])
