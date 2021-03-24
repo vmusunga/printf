@@ -6,7 +6,7 @@
 /*   By: vmusunga <vmusunga@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 15:10:15 by vmusunga          #+#    #+#             */
-/*   Updated: 2021/03/24 12:30:34 by vmusunga         ###   ########.fr       */
+/*   Updated: 2021/03/24 15:12:07 by vmusunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,41 +27,45 @@ void	precision_width_flags(const char *str, va_list v_list, t_flags *flags, int 
 	if (str[*i] == '*')
 	{
 		flags->width = 1;
-		*i++;
+		(*i)++;
 	}
 	else if (ft_isdigit(str[*i]))
-		flags->width = ft_atoi(str, &i);
+		flags->width = ft_atoi(str, i);
 	if (str[*i] == '.')
 	{
 		flags->precision = 1;
-		*i++;
+		(*i)++;
 		if (str[*i] == '*')
 		{
-			flags->precision == va_arg(v_list, int);
-			*i++;
+			flags->precision = va_arg(v_list, int);
+			(*i)++;
 		}
 		else if (ft_isdigit(str[*i]))
-			flags->precision = ft_atoi(str, &i);
+			flags->precision = ft_atoi(str, i);
 	}
 	if (flags->precision < 0)
 		flags->precision = 0;
 	return ;
 }
 
-void	ft_fill_flags(const char *str, t_flags *flags, int *i)
+void	ft_check_flags(const char *str, t_flags *flags, int *i, va_list v_list)
 {
+	ft_struct_init(flags);
 	while (str[*i] == '0' || str[*i] == '-')
 	{
 		if (str[*i] == '0')
 			flags->zero += 1;
 		else if (str[*i] == '-')
 			flags->minus += 1;
-		*i++;
+		(*i)++;
 	}
+	precision_width_flags(str, v_list, flags, i);
+	return ;
 }
 
 void	ft_flags(const char *str, int *i, va_list v_list, t_flags *flags)
 {
+	ft_check_flags(str, flags, i, v_list);
 	if (str[*i] == 'c')
 		ft_c_flag((char)va_arg(v_list, int), flags);
 	else if (str[*i] == 's')
@@ -73,11 +77,11 @@ void	ft_flags(const char *str, int *i, va_list v_list, t_flags *flags)
 	else if (str[*i] == '%')
 		ft_putchar('%', flags);
 	else if (str[*i] == 'u')
-		return (5);
+		return ;
 	else if (str[*i] == 'x')
-		return (6);
+		return ;
 	else if (str[*i] == 'X')
-		return (7);
+		return ;
 	(*i)++;
 	return ;
 }

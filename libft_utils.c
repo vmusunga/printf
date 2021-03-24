@@ -6,13 +6,13 @@
 /*   By: vmusunga <vmusunga@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 15:13:41 by vmusunga          #+#    #+#             */
-/*   Updated: 2021/03/24 12:09:01 by vmusunga         ###   ########.fr       */
+/*   Updated: 2021/03/24 14:34:39 by vmusunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-size_t		ft_strlen(const char *str)
+int		ft_strlen(const char *str)
 {
 	int x;
 
@@ -67,27 +67,25 @@ static int	ft_overflow(unsigned long long x, int sign)
 
 int			ft_atoi(const char *str, int *i)
 {
-
 	int					sign;
 	unsigned long long	x;
 
 	sign = 1;
-	i = 0;
 	while (str[*i] && (str[*i] == ' ' || str[*i] == '\t' || str[*i] == '\n'
 				|| str[*i] == '\v' || str[*i] == '\f' || str[*i] == '\r'))
-		*i++;
+		(*i)++;
 	if (str[*i] == '+' || str[*i] == '-')
 	{
 		if (str[*i] == '-')
 			sign = -1;
-		i++;
+		(*i)++;
 	}
 	x = 0;
 	while (str[*i] && str[*i] >= '0' && str[*i] <= '9')
 	{
 		x = x * 10;
 		x = x + str[*i] - 48;
-		*i++;
+		(*i)++;
 	}
 	if (ft_overflow(x, sign) != 2)
 		return (ft_overflow(x, sign));

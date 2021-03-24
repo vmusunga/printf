@@ -1,20 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_printf.c                                      :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vmusunga <vmusunga@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/23 15:13:38 by vmusunga          #+#    #+#             */
-/*   Updated: 2021/03/24 15:39:50 by vmusunga         ###   ########.fr       */
+/*   Created: 2021/03/24 14:32:49 by vmusunga          #+#    #+#             */
+/*   Updated: 2021/03/24 15:40:33 by vmusunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		main()
+int main()
 {
-	char *res = "abc";
-	printf("%-10s", res);
+	char *res = "brrrrt";
+	int x;
+	
+	ft_printf("%10s\n", res);
+	//ft_printf("%s ---- %d\n", res, x);
+	//ft_printf("%.*s", 3, res);
 	return (0);
 }
