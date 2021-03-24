@@ -6,7 +6,7 @@
 /*   By: vmusunga <vmusunga@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 12:23:15 by vmusunga          #+#    #+#             */
-/*   Updated: 2021/03/23 13:03:52 by vmusunga         ###   ########.fr       */
+/*   Updated: 2021/03/24 12:30:30 by vmusunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,11 @@ size_t	ft_strlen(const char *str);
 void	ft_putchar(char c, t_flags *flags);
 void	ft_putstr(char *s, t_flags *flags);
 int		ft_isdigit(char c);
-int		ft_atoi(const char *str);
+int		ft_atoi(const char *str, int *i);
 void	ft_putnbr(int nb, t_flags *flags);
 
 void	ft_struct_init(t_flags *flags);
-void	ft_width_flags(const char *str, t_flags *flags, int *i);
+void	precision_width_flags(const char *str, va_list v_list, t_flags *flags, int *i);
 void	ft_fill_flags(const char *str, t_flags *flags, int *i);
 int		ft_flags(const char *str, int *i, va_list v_list, t_flags *flags);
 void	ft_c_flag(char c, t_flags *flags);

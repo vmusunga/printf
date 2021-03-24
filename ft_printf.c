@@ -6,7 +6,7 @@
 /*   By: vmusunga <vmusunga@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 12:25:08 by vmusunga          #+#    #+#             */
-/*   Updated: 2021/03/23 16:25:43 by vmusunga         ###   ########.fr       */
+/*   Updated: 2021/03/24 12:30:32 by vmusunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,13 @@ int		ft_printf(const char *str, ...)
 	{
 		if (str[i++] == '%')
 		{
-			flags->count += ft_flags(str, &i, v_list, flags);
+			ft_flags(str, &i, v_list, flags);
+			precision_width_flags(str, v_list, flags, &i);
+			ft_fill_flags(str, flags, &i);
 		}
 		else
-		{
 			ft_putchar(str[i++], flags);
-			flags->count++;
-		}
+
 	}
 	va_end(v_list);
 	return (flags->count);

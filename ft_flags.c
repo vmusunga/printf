@@ -6,7 +6,7 @@
 /*   By: vmusunga <vmusunga@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 15:10:15 by vmusunga          #+#    #+#             */
-/*   Updated: 2021/03/23 16:25:42 by vmusunga         ###   ########.fr       */
+/*   Updated: 2021/03/24 12:30:34 by vmusunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft_struct_init(t_flags *flags)
 	flags->width = 0;
 }
 
-void	ft_width_flags(const char *str, va_list v_list, t_flags *flags, int *i)
+void	precision_width_flags(const char *str, va_list v_list, t_flags *flags, int *i)
 {
 	if (str[*i] == '*')
 	{
@@ -30,15 +30,18 @@ void	ft_width_flags(const char *str, va_list v_list, t_flags *flags, int *i)
 		*i++;
 	}
 	else if (ft_isdigit(str[*i]))
-		flags->width = ft_atoi(&str[*i]);
+		flags->width = ft_atoi(str, &i);
 	if (str[*i] == '.')
 	{
 		flags->precision = 1;
 		*i++;
 		if (str[*i] == '*')
+		{
 			flags->precision == va_arg(v_list, int);
+			*i++;
+		}
 		else if (ft_isdigit(str[*i]))
-			flags->precision = ft_atoi(&str[*i]);
+			flags->precision = ft_atoi(str, &i);
 	}
 	if (flags->precision < 0)
 		flags->precision = 0;
@@ -47,7 +50,6 @@ void	ft_width_flags(const char *str, va_list v_list, t_flags *flags, int *i)
 
 void	ft_fill_flags(const char *str, t_flags *flags, int *i)
 {
-	ft_struct_init(flags);
 	while (str[*i] == '0' || str[*i] == '-')
 	{
 		if (str[*i] == '0')
@@ -58,11 +60,8 @@ void	ft_fill_flags(const char *str, t_flags *flags, int *i)
 	}
 }
 
-int		ft_flags(const char *str, int *i, va_list v_list, t_flags *flags)
+void	ft_flags(const char *str, int *i, va_list v_list, t_flags *flags)
 {
-	int count;
-
-	count = 1;
 	if (str[*i] == 'c')
 		ft_c_flag((char)va_arg(v_list, int), flags);
 	else if (str[*i] == 's')
@@ -72,10 +71,7 @@ int		ft_flags(const char *str, int *i, va_list v_list, t_flags *flags)
 	else if (str[*i] == 'd' || str[*i] == 'i')
 		ft_di_flag(va_arg(v_list, int), flags);
 	else if (str[*i] == '%')
-	{
 		ft_putchar('%', flags);
-		return (count);
-	}
 	else if (str[*i] == 'u')
 		return (5);
 	else if (str[*i] == 'x')
@@ -83,7 +79,7 @@ int		ft_flags(const char *str, int *i, va_list v_list, t_flags *flags)
 	else if (str[*i] == 'X')
 		return (7);
 	(*i)++;
-	return (count);
+	return ;
 }
 
 void	ft_c_flag(char c, t_flags *flags)
