@@ -6,7 +6,7 @@
 /*   By: vmusunga <vmusunga@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 15:37:55 by vmusunga          #+#    #+#             */
-/*   Updated: 2021/03/25 15:10:57 by vmusunga         ###   ########.fr       */
+/*   Updated: 2021/03/25 16:19:18 by vmusunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,18 @@ void	ft_s_flag(char *s, t_flags *flags)
 {
 	if (flags->precision)
 	{
-		if (flags->precision <= ft_strlen(s))
+		if (flags->precision < ft_strlen(s))
 			flags->width -= flags->precision;
 		else
 			flags->width -= ft_strlen(s);
 	}
+	else
+		flags->width -= ft_strlen(s);
 	if (flags->minus)
+	{
+		flags->zero = 0;
 		minus_width(s, flags);
+	}
 	else
 		default_width(s, flags);
 	return ;

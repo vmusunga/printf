@@ -6,7 +6,7 @@
 /*   By: vmusunga <vmusunga@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 15:10:15 by vmusunga          #+#    #+#             */
-/*   Updated: 2021/03/25 14:35:04 by vmusunga         ###   ########.fr       */
+/*   Updated: 2021/03/25 16:19:16 by vmusunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	precision_width_flags(const char *str, va_list v_list, t_flags *flags, int 
 		(*i)++;
 		if (str[*i] == '*')
 		{
-			flags->precision = va_arg(v_list, int);
+			flags->precision = va_arg(v_list, int);  //what if 0 ?
 			(*i)++;
 		}
 		else if (ft_isdigit(str[*i]))
@@ -45,6 +45,8 @@ void	precision_width_flags(const char *str, va_list v_list, t_flags *flags, int 
 	}
 	if (flags->precision < 0)
 		flags->precision = 0;
+	if (flags->width < 0)
+		flags->width *= -1;
 	return ;
 }
 
