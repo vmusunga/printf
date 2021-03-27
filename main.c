@@ -6,7 +6,7 @@
 /*   By: vmusunga <vmusunga@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 14:32:49 by vmusunga          #+#    #+#             */
-/*   Updated: 2021/03/25 16:08:59 by vmusunga         ###   ########.fr       */
+/*   Updated: 2021/03/27 13:21:50 by vmusunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,15 @@ int main()
 	
 	ft_printf("1 --> %-*.*s, %-*.*s, %-*.*s, %-*.*s, %-*.*s, %-*.*s, %-*.*s, %-*.*s\n", a, b, n, a, b, o, a, b, p, a, b, q, a, b, r, a, b, s, a, b, t, a, b, u);
 	printf("2 --> %-*.*s, %-*.*s, %-*.*s, %-*.*s, %-*.*s, %-*.*s, %-*.*s, %-*.*s\n", a, b, n, a, b, o, a, b, p, a, b, q, a, b, r, a, b, s, a, b, t, a, b, u);
+
+	ft_printf("11 --> %1s, %1s, %1s, %1s, %1s\n\n", n, o, p, q, r);
+	printf("22 --> %1s, %1s, %1s, %1s, %1s\n\n", n, o, p, q, r);
+
+	ft_printf("111 --> %15s, %15s, %15s, %15s, %15s\n\n", n, o, p, q, r);
+	printf("222 --> %15s, %15s, %15s, %15s, %15s\n\n", n, o, p, q, r);
+
+	ft_printf("BABA		%-*s, %-*s, %-*s, %-*s, %-*s, %-*s, %-*s, %-*s\n", a, n, a, o, a, p, a, q, a, r, a, s, a, t, a, u);
+	printf("BABA		%-*s, %-*s, %-*s, %-*s, %-*s, %-*s, %-*s, %-*s\n", a, n, a, o, a, p, a, q, a, r, a, s, a, t, a, u);
 
 	ft_printf("ft : %-*.*s\n", 4, 2, res);
 	printf("Re : %-*.*s\n", 4, 2, res);

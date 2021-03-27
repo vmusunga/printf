@@ -6,7 +6,7 @@
 /*   By: vmusunga <vmusunga@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 12:23:15 by vmusunga          #+#    #+#             */
-/*   Updated: 2021/03/24 15:11:15 by vmusunga         ###   ########.fr       */
+/*   Updated: 2021/03/27 12:55:21 by vmusunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,11 @@
 # include "stdarg.h"
 # include "stdlib.h"
 
+typedef enum	{True, False}	t_bool;
+
 typedef struct	s_flags
 {
+	t_bool precision_bool;
 	int count;
 	int minus;
 	int precision;

@@ -6,7 +6,7 @@
 /*   By: vmusunga <vmusunga@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 15:37:55 by vmusunga          #+#    #+#             */
-/*   Updated: 2021/03/25 16:19:18 by vmusunga         ###   ########.fr       */
+/*   Updated: 2021/03/27 13:25:09 by vmusunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_s_flag(char *s, t_flags *flags)
 {
-	if (flags->precision)
+	if (flags->precision_bool == True)
 	{
 		if (flags->precision < ft_strlen(s))
 			flags->width -= flags->precision;
@@ -48,7 +48,7 @@ void	default_width(char *s, t_flags *flags)
 					ft_putchar(' ', flags);
 		}
 	}
-	if (flags->precision && flags->precision < ft_strlen(s))
+	if (flags->precision_bool == True && flags->precision < ft_strlen(s))
 	{
 		while (flags->precision--)
 			ft_putchar(*s++, flags);
@@ -60,7 +60,7 @@ void	default_width(char *s, t_flags *flags)
 
 void	minus_width(char *s, t_flags *flags)
 {
-	if (flags->precision && flags->precision < ft_strlen(s))
+	if (flags->precision_bool == True && flags->precision < ft_strlen(s))
 	{
 		while (flags->precision--)
 			ft_putchar(*s++, flags);
