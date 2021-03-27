@@ -6,7 +6,7 @@
 /*   By: vmusunga <vmusunga@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 12:23:15 by vmusunga          #+#    #+#             */
-/*   Updated: 2021/03/27 14:42:49 by vmusunga         ###   ########.fr       */
+/*   Updated: 2021/03/27 15:49:21 by vmusunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,10 +52,12 @@ void	ft_s_flag(char *s, t_flags *flags);
 void	default_width(char *s, t_flags *flags);
 void	minus_width(char *s, t_flags *flags);
 
+void	ft_x_flag(unsigned long x, t_flags *flags);
 void	ft_p_flag(unsigned long x, t_flags *flags);
 void	ft_di_flag(int x, t_flags *flags);
 
 void	ft_putnbr_base(int nbr, char *base, t_flags *flags);
+void	ft_putnbr_base_x(int nbr, char *base, t_flags *flags);
 
 char	*ft_strdup(const char *s1);
 char	*ft_strjoin(char *s1, char *s2);

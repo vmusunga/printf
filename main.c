@@ -6,7 +6,7 @@
 /*   By: vmusunga <vmusunga@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 14:32:49 by vmusunga          #+#    #+#             */
-/*   Updated: 2021/03/27 15:23:17 by vmusunga         ###   ########.fr       */
+/*   Updated: 2021/03/27 15:55:39 by vmusunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,8 @@ int main()
 	printf("C2		%-*s, %-*s, %-*s, %-*s, %-*s, %-*s, %-*s, %-*s\n", a, n, a, o, a, p, a, q, a, r, a, s, a, t, a, u);
 	*/
 
-	ft_printf("ft : %-*.*p\n", 4, 4, res);
-	printf("Re : %-*.*p\n", 4, 4, res);
+	ft_printf("ft : %-*.*x\n", 8, 2, k);
+	printf("Re : %-*.*x\n", 8, 2, k);
 
 	ft_printf("ft : %-*.*c\n", 4, 2, c);
 	printf("Re : %-*.*c\n", 4, 2, c);

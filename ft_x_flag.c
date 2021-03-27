@@ -1,18 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_flags_utils.c                                   :+:      :+:    :+:   */
+/*   ft_x_flag.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vmusunga <vmusunga@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/22 16:39:45 by vmusunga          #+#    #+#             */
-/*   Updated: 2021/03/27 15:34:23 by vmusunga         ###   ########.fr       */
+/*   Created: 2021/03/27 15:39:28 by vmusunga          #+#    #+#             */
+/*   Updated: 2021/03/27 15:56:17 by vmusunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putnbr_base(int nbr, char *base, t_flags *flags)
+void	ft_x_flag(unsigned long x, t_flags *flags)
+{
+	char *base;
+
+	base = "0123456789abcdef";
+	ft_putnbr_base_x(x, base, flags);
+	return ;
+}
+
+void	ft_putnbr_base_x(int nbr, char *base, t_flags *flags)
 {
 	unsigned int	l;
 	unsigned int	n;
@@ -22,27 +31,19 @@ void	ft_putnbr_base(int nbr, char *base, t_flags *flags)
 	if (n >= l)
 	{
 		ft_putnbr_base(n / l, base, flags);
-		ft_putchar(base[n % l], flags);
+		if(flags->precision_bool == True)
+		{
+			if (flags->precision-- > 0)
+				ft_putchar(base[n % l], flags);
+		}
+		else
+			ft_putchar(base[n % l], flags);
+	}
+	else if (flags->precision_bool == True)
+	{
+		if (flags->precision-- > 0)
+			ft_putchar(base[n], flags);
 	}
 	else
 		ft_putchar(base[n], flags);
-}
-
-void	ft_putnbr(int nb, t_flags *flags)
-{
-	unsigned int n;
-
-	n = nb;
-	if (nb < 0)
-	{
-		ft_putchar('-', flags);
-		n = -nb;
-	}
-	if (n > 9)
-	{
-		ft_putnbr((n / 10), flags);
-		ft_putchar((n % 10 + '0'), flags);
-	}
-	else
-		ft_putchar((n + '0'), flags);
 }
