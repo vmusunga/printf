@@ -6,7 +6,7 @@
 /*   By: vmusunga <vmusunga@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 12:23:15 by vmusunga          #+#    #+#             */
-/*   Updated: 2021/03/27 12:55:21 by vmusunga         ###   ########.fr       */
+/*   Updated: 2021/03/27 14:42:49 by vmusunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ void	ft_struct_init(t_flags *flags);
 void	precision_width_flags(const char *str, va_list v_list, t_flags *flags, int *i);
 
 void	ft_flags(const char *str, int *i, va_list v_list, t_flags *flags);
+
 void	ft_c_flag(char c, t_flags *flags);
 
 void	ft_s_flag(char *s, t_flags *flags);

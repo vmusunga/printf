@@ -6,7 +6,7 @@
 /*   By: vmusunga <vmusunga@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 15:37:55 by vmusunga          #+#    #+#             */
-/*   Updated: 2021/03/27 13:25:09 by vmusunga         ###   ########.fr       */
+/*   Updated: 2021/03/27 13:59:50 by vmusunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_s_flag(char *s, t_flags *flags)
 {
+	if (!s)
+		s = "(null)";
 	if (flags->precision_bool == True)
 	{
 		if (flags->precision < ft_strlen(s))

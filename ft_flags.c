@@ -6,7 +6,7 @@
 /*   By: vmusunga <vmusunga@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 15:10:15 by vmusunga          #+#    #+#             */
-/*   Updated: 2021/03/27 12:57:43 by vmusunga         ###   ########.fr       */
+/*   Updated: 2021/03/27 15:26:20 by vmusunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	precision_width_flags(const char *str, va_list v_list, t_flags *flags, int 
 		(*i)++;
 		if (str[*i] == '*')
 		{
-			flags->precision = va_arg(v_list, int);  //what if 0 ?
+			flags->precision = va_arg(v_list, int);
 			(*i)++;
 		}
 		else if (ft_isdigit(str[*i]))
@@ -72,7 +72,7 @@ void	ft_flags(const char *str, int *i, va_list v_list, t_flags *flags)
 {
 	ft_check_flags(str, flags, i, v_list);
 	if (str[*i] == 'c')
-		ft_c_flag((char)va_arg(v_list, int), flags);
+		ft_c_flag(va_arg(v_list, int), flags);
 	else if (str[*i] == 's')
 		ft_s_flag(va_arg(v_list, char*), flags);
 	else if (str[*i] == 'p')
@@ -89,20 +89,6 @@ void	ft_flags(const char *str, int *i, va_list v_list, t_flags *flags)
 		return ;
 	(*i)++;
 	return ;
-}
-
-void	ft_c_flag(char c, t_flags *flags)
-{
-	ft_putchar(c, flags);
-}
-
-void	ft_p_flag(unsigned long x, t_flags *flags)
-{
-	char *base;
-
-	base = "0123456789abcdef";
-	ft_putstr("0x", flags);
-	ft_putnbr_base(x, base, flags);
 }
 
 void	ft_di_flag(int x, t_flags *flags)

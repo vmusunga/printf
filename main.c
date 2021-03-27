@@ -6,7 +6,7 @@
 /*   By: vmusunga <vmusunga@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 14:32:49 by vmusunga          #+#    #+#             */
-/*   Updated: 2021/03/27 13:21:50 by vmusunga         ###   ########.fr       */
+/*   Updated: 2021/03/27 15:23:17 by vmusunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,20 +40,24 @@ int main()
         char    *t = "0x12345678";
         char    *u = "-0";
 	
-	ft_printf("1 --> %-*.*s, %-*.*s, %-*.*s, %-*.*s, %-*.*s, %-*.*s, %-*.*s, %-*.*s\n", a, b, n, a, b, o, a, b, p, a, b, q, a, b, r, a, b, s, a, b, t, a, b, u);
+	/*ft_printf("1 --> %-*.*s, %-*.*s, %-*.*s, %-*.*s, %-*.*s, %-*.*s, %-*.*s, %-*.*s\n", a, b, n, a, b, o, a, b, p, a, b, q, a, b, r, a, b, s, a, b, t, a, b, u);
 	printf("2 --> %-*.*s, %-*.*s, %-*.*s, %-*.*s, %-*.*s, %-*.*s, %-*.*s, %-*.*s\n", a, b, n, a, b, o, a, b, p, a, b, q, a, b, r, a, b, s, a, b, t, a, b, u);
 
-	ft_printf("11 --> %1s, %1s, %1s, %1s, %1s\n\n", n, o, p, q, r);
-	printf("22 --> %1s, %1s, %1s, %1s, %1s\n\n", n, o, p, q, r);
+	ft_printf("A1 --> %-2s, %.s, %-4s, %-2.4s, %-8.12s, %3s, %8s, %---2s, %.*s, %.0s, %.1s, %.2s, %.4s, %.8s\n", NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, -2, NULL, NULL, NULL, NULL, NULL, NULL);
+	printf("A2 --> %-2s, %.s, %-4s, %-2.4s, %-8.12s, %3s, %8s, %---2s, %.*s, %.0s, %.1s, %.2s, %.4s, %.8s\n", NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, -2, NULL, NULL, NULL, NULL, NULL, NULL);
 
-	ft_printf("111 --> %15s, %15s, %15s, %15s, %15s\n\n", n, o, p, q, r);
-	printf("222 --> %15s, %15s, %15s, %15s, %15s\n\n", n, o, p, q, r);
+	ft_printf("B1 --> %15s, %15s, %15s, %15s, %15s\n\n", n, o, p, q, r);
+	printf("B2 --> %15s, %15s, %15s, %15s, %15s\n\n", n, o, p, q, r);
 
-	ft_printf("BABA		%-*s, %-*s, %-*s, %-*s, %-*s, %-*s, %-*s, %-*s\n", a, n, a, o, a, p, a, q, a, r, a, s, a, t, a, u);
-	printf("BABA		%-*s, %-*s, %-*s, %-*s, %-*s, %-*s, %-*s, %-*s\n", a, n, a, o, a, p, a, q, a, r, a, s, a, t, a, u);
+	ft_printf("C1		%-*s, %-*s, %-*s, %-*s, %-*s, %-*s, %-*s, %-*s\n", a, n, a, o, a, p, a, q, a, r, a, s, a, t, a, u);
+	printf("C2		%-*s, %-*s, %-*s, %-*s, %-*s, %-*s, %-*s, %-*s\n", a, n, a, o, a, p, a, q, a, r, a, s, a, t, a, u);
+	*/
 
-	ft_printf("ft : %-*.*s\n", 4, 2, res);
-	printf("Re : %-*.*s\n", 4, 2, res);
+	ft_printf("ft : %-*.*p\n", 4, 4, res);
+	printf("Re : %-*.*p\n", 4, 4, res);
+
+	ft_printf("ft : %-*.*c\n", 4, 2, c);
+	printf("Re : %-*.*c\n", 4, 2, c);
 
 	ft_printf("ft : %-10.3s\n", res);
 	printf("Re : %-10.3s\n", res);
