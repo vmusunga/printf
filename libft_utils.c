@@ -6,7 +6,7 @@
 /*   By: vmusunga <vmusunga@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 15:13:41 by vmusunga          #+#    #+#             */
-/*   Updated: 2021/03/29 19:14:49 by vmusunga         ###   ########.fr       */
+/*   Updated: 2021/03/29 21:47:16 by vmusunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,16 @@ int		ft_strlen(const char *str)
 	return (x);
 }
 
-int		ft_nbrlen(unsigned long x)
+int		ft_nbrlen(long x)
 {
 	int i;
 	
 	i = 0;
 	if (x < 0)
+	{
 		i = 1;
+		x *= -1;
+	}
 	while (x != 0)
 	{
 		x = x / 10;
