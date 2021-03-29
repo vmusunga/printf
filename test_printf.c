@@ -6,7 +6,7 @@
 /*   By: vmusunga <vmusunga@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 15:13:38 by vmusunga          #+#    #+#             */
-/*   Updated: 2021/03/24 15:39:50 by vmusunga         ###   ########.fr       */
+/*   Updated: 2021/03/29 18:30:00 by vmusunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 int		main()
 {
+	int x = 1234567890;
 	char *res = "abc";
-	printf("%-10s", res);
+	printf("%d", ft_nbrlen(x));
 	return (0);
 }

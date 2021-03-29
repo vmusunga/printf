@@ -6,7 +6,7 @@
 /*   By: vmusunga <vmusunga@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 14:32:49 by vmusunga          #+#    #+#             */
-/*   Updated: 2021/03/27 15:55:39 by vmusunga         ###   ########.fr       */
+/*   Updated: 2021/03/29 19:25:26 by vmusunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,19 +40,22 @@ int main()
         char    *t = "0x12345678";
         char    *u = "-0";
 	
-	/*ft_printf("1 --> %-*.*s, %-*.*s, %-*.*s, %-*.*s, %-*.*s, %-*.*s, %-*.*s, %-*.*s\n", a, b, n, a, b, o, a, b, p, a, b, q, a, b, r, a, b, s, a, b, t, a, b, u);
-	printf("2 --> %-*.*s, %-*.*s, %-*.*s, %-*.*s, %-*.*s, %-*.*s, %-*.*s, %-*.*s\n", a, b, n, a, b, o, a, b, p, a, b, q, a, b, r, a, b, s, a, b, t, a, b, u);
+	//ft_printf("1 --> %-*.*s, %-*.*s, %-*.*s, %-*.*s, %-*.*s, %-*.*s, %-*.*s, %-*.*s\n", a, b, n, a, b, o, a, b, p, a, b, q, a, b, r, a, b, s, a, b, t, a, b, u);
+	//printf("2 --> %-*.*s, %-*.*s, %-*.*s, %-*.*s, %-*.*s, %-*.*s, %-*.*s, %-*.*s\n", a, b, n, a, b, o, a, b, p, a, b, q, a, b, r, a, b, s, a, b, t, a, b, u);
 
 	ft_printf("A1 --> %-2s, %.s, %-4s, %-2.4s, %-8.12s, %3s, %8s, %---2s, %.*s, %.0s, %.1s, %.2s, %.4s, %.8s\n", NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, -2, NULL, NULL, NULL, NULL, NULL, NULL);
 	printf("A2 --> %-2s, %.s, %-4s, %-2.4s, %-8.12s, %3s, %8s, %---2s, %.*s, %.0s, %.1s, %.2s, %.4s, %.8s\n", NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, -2, NULL, NULL, NULL, NULL, NULL, NULL);
 
-	ft_printf("B1 --> %15s, %15s, %15s, %15s, %15s\n\n", n, o, p, q, r);
-	printf("B2 --> %15s, %15s, %15s, %15s, %15s\n\n", n, o, p, q, r);
+	ft_printf("ft : %.0s\n", NULL);  //THE FUCK??
+	printf("Re : %.0s\n", NULL);
 
-	ft_printf("C1		%-*s, %-*s, %-*s, %-*s, %-*s, %-*s, %-*s, %-*s\n", a, n, a, o, a, p, a, q, a, r, a, s, a, t, a, u);
-	printf("C2		%-*s, %-*s, %-*s, %-*s, %-*s, %-*s, %-*s, %-*s\n", a, n, a, o, a, p, a, q, a, r, a, s, a, t, a, u);
-	*/
+	//ft_printf("B1 --> %15s, %15s, %15s, %15s, %15s\n\n", n, o, p, q, r);
+	//printf("B2 --> %15s, %15s, %15s, %15s, %15s\n\n", n, o, p, q, r);
 
+	//ft_printf("C1		%-*s, %-*s, %-*s, %-*s, %-*s, %-*s, %-*s, %-*s\n", a, n, a, o, a, p, a, q, a, r, a, s, a, t, a, u);
+	//printf("C2		%-*s, %-*s, %-*s, %-*s, %-*s, %-*s, %-*s, %-*s\n", a, n, a, o, a, p, a, q, a, r, a, s, a, t, a, u);
+	
+/*
 	ft_printf("ft : %-*.*x\n", 8, 2, k);
 	printf("Re : %-*.*x\n", 8, 2, k);
 
@@ -66,6 +69,13 @@ int main()
 	printf("Re : %-010s\n", res);
 	
 	ft_printf("ft : %.*s\n\n", 3, res);
-	printf("Re : %.*s\n", 3, res);
+	printf("Re : %.*s\n", 3, res);*/
+
+	//ft_printf("%17s, %17s, %17s, %17s, %17s\n", n, o, p, q, r);
+	//printf("%17s, %17s, %17s, %17s, %17s\n", n, o, p, q, r);
+
+	ft_printf("ft : %010d\n", k);
+	printf("Re : %010d\n", k);
+	
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: vmusunga <vmusunga@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 12:23:15 by vmusunga          #+#    #+#             */
-/*   Updated: 2021/03/27 15:49:21 by vmusunga         ###   ########.fr       */
+/*   Updated: 2021/03/29 18:47:53 by vmusunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ typedef struct	s_flags
 int		ft_printf(const char *str, ...);
 
 int		ft_strlen(const char *str);
+int		ft_nbrlen(unsigned long x);
 void	ft_putchar(char c, t_flags *flags);
 void	ft_putstr(char *s, t_flags *flags);
 int		ft_isdigit(char c);
@@ -52,10 +53,12 @@ void	ft_s_flag(char *s, t_flags *flags);
 void	default_width(char *s, t_flags *flags);
 void	minus_width(char *s, t_flags *flags);
 
+void	ft_di_flag(int x, t_flags *flags);
+void	default_di_flag(unsigned long x, t_flags *flags);
+void	minus_di_flag(unsigned long x, t_flags *flags);
+
 void	ft_x_flag(unsigned long x, t_flags *flags);
 void	ft_p_flag(unsigned long x, t_flags *flags);
-void	ft_di_flag(int x, t_flags *flags);
-
 void	ft_putnbr_base(int nbr, char *base, t_flags *flags);
 void	ft_putnbr_base_x(int nbr, char *base, t_flags *flags);
 

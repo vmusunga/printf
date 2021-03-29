@@ -6,7 +6,7 @@
 /*   By: vmusunga <vmusunga@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 15:10:15 by vmusunga          #+#    #+#             */
-/*   Updated: 2021/03/27 15:52:59 by vmusunga         ###   ########.fr       */
+/*   Updated: 2021/03/29 20:55:27 by vmusunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_struct_init(t_flags *flags)
 	flags->count = 0;
 	flags->dot = 0;
 	flags->minus = 0;
-	flags->precision = 0;
+	flags->precision = 1;
 	flags->zero = 0;
 	flags->width = 0;
 }
@@ -43,6 +43,8 @@ void	precision_width_flags(const char *str, va_list v_list, t_flags *flags, int 
 		}
 		else if (ft_isdigit(str[*i]))
 			flags->precision = ft_atoi(str, i);
+		else
+			flags->precision = 0;		// !! default for d/i == 1 !!
 	}
 	if (flags->precision < 0)
 		flags->precision_bool = False;
@@ -53,7 +55,6 @@ void	precision_width_flags(const char *str, va_list v_list, t_flags *flags, int 
 
 void	ft_check_flags(const char *str, t_flags *flags, int *i, va_list v_list)
 {
-	ft_struct_init(flags);
 	while (str[*i] == '0' || str[*i] == '-')
 	{
 		if (str[*i] == '0')
@@ -91,7 +92,7 @@ void	ft_flags(const char *str, int *i, va_list v_list, t_flags *flags)
 	return ;
 }
 
-void	ft_di_flag(int x, t_flags *flags)
+/*void	ft_di_flag(int x, t_flags *flags)
 {
 	ft_putnbr(x, flags);
-}
+}*/
