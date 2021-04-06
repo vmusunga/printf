@@ -6,7 +6,7 @@
 #    By: vmusunga <vmusunga@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/02 12:31:33 by vmusunga          #+#    #+#              #
-#    Updated: 2021/03/29 18:46:37 by vmusunga         ###   ########.fr        #
+#    Updated: 2021/04/06 17:31:21 by vmusunga         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,7 @@ SRCS	=		ft_printf.c\
 				ft_p_flag.c\
 				ft_x_flag.c\
 				ft_di_flag.c\
+				ft_u_flag.c\
 
 OBJS	=		$(SRCS:.c=.o)
 OBJS_BONUS =	$(BONUS:.c=.o)

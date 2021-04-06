@@ -6,7 +6,7 @@
 /*   By: vmusunga <vmusunga@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 14:32:49 by vmusunga          #+#    #+#             */
-/*   Updated: 2021/03/29 23:31:43 by vmusunga         ###   ########.fr       */
+/*   Updated: 2021/04/06 18:24:13 by vmusunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,19 +73,19 @@ int main()
 
 	//ft_printf("%17s, %17s, %17s, %17s, %17s\n", n, o, p, q, r);															OK
 	//printf("%17s, %17s, %17s, %17s, %17s\n", n, o, p, q, r);															OK
+
+	//ft_printf("2		%5.d\n", l);							OK
+	//printf("2		%5.d\n", l);								OK
 */
 
-	ft_printf("1		%.d\n", l);
-	printf("1		%.d\n", l);
-	
-	ft_printf("2		%5.d\n", l);
-	printf("2		%5.d\n", l);
+	ft_printf("1		%0.u, %0.u\n", k, l);			
+	printf("1		%.u, %0.u\n", k, l);				
 
-	//ft_printf("2		%7i, %7d, %7d, %7d, %7d, %7d, %7d, %7d\n", i, j, k, l, m, c, e, d);
-	//printf("2		%7i, %7d, %7d, %7d, %7d, %7d, %7d, %7d\n", i, j, k, l, m, c, e, d);
+	//ft_printf("2		%7i, %7d, %7d, %7d, %7d, %7d, %7d, %7d\n", i, j, k, l, m, c, e, d);					!!
+	//printf("2		%7i, %7d, %7d, %7d, %7d, %7d, %7d, %7d\n", i, j, k, l, m, c, e, d);						!!
 	
-	//ft_printf("3		%0.i, %0.d, %0.d, %0.d, %0.d, %0.d, %0.d, %0.d\n", i, j, k, l, m, c, e, d);
-	//printf("3		%0.i, %0.d, %0.d, %0.d, %0.d, %0.d, %0.d, %0.d\n", i, j, k, l, m, c, e, d);
+	//ft_printf("3		%0.i, %0.d, %0.d, %0.d, %0.d, %0.d, %0.d, %0.d\n", i, j, k, l, m, c, e, d);			!!
+	//printf("3		%0.i, %0.d, %0.d, %0.d, %0.d, %0.d, %0.d, %0.d\n", i, j, k, l, m, c, e, d);				!!
 
 	return (0);
 }

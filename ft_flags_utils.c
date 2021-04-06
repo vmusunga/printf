@@ -6,7 +6,7 @@
 /*   By: vmusunga <vmusunga@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 16:39:45 by vmusunga          #+#    #+#             */
-/*   Updated: 2021/03/27 15:34:23 by vmusunga         ###   ########.fr       */
+/*   Updated: 2021/04/06 18:16:59 by vmusunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,26 @@ void	ft_putnbr_base(int nbr, char *base, t_flags *flags)
 		ft_putchar(base[n], flags);
 }
 
-void	ft_putnbr(int nb, t_flags *flags)
+void	ft_putnbr(long nb, t_flags *flags)
+{
+	unsigned long n;
+
+	n = nb;
+	if (nb < 0)
+	{
+		ft_putchar('-', flags);
+		n = -nb;
+	}
+	if (n > 9)
+	{
+		ft_putnbr((n / 10), flags);
+		ft_putchar((n % 10 + '0'), flags);
+	}
+	else
+		ft_putchar((n + '0'), flags);
+}
+
+void	ft_putnbr_u(unsigned int nb, t_flags *flags)
 {
 	unsigned int n;
 

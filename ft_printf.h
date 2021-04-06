@@ -6,7 +6,7 @@
 /*   By: vmusunga <vmusunga@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 12:23:15 by vmusunga          #+#    #+#             */
-/*   Updated: 2021/03/30 00:08:46 by vmusunga         ###   ########.fr       */
+/*   Updated: 2021/04/06 18:16:05 by vmusunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,8 @@ void	ft_putchar(char c, t_flags *flags);
 void	ft_putstr(char *s, t_flags *flags);
 int		ft_isdigit(char c);
 int		ft_atoi(const char *str, int *i);
-void	ft_putnbr(int nb, t_flags *flags);
+void	ft_putnbr(long nb, t_flags *flags);
+void	ft_putnbr_u(unsigned int nb, t_flags *flags);
 
 void	ft_check_flags(const char *str, t_flags *flags, int *i, va_list v_list);
 void	ft_struct_init(t_flags *flags);
@@ -53,11 +54,17 @@ void	ft_s_flag(char *s, t_flags *flags);
 void	default_width(char *s, t_flags *flags);
 void	minus_width(char *s, t_flags *flags);
 
-void	ft_di_flag(int x, t_flags *flags);
+void	ft_di_flag(long x, t_flags *flags);
 void	default_di_flag(long x, t_flags *flags);
 void	minus_di_flag(long x, t_flags *flags);
 void	negative_precision(long x, t_flags *flags);
 void	di_zero(t_flags *flags);
+
+void	ft_u_flag(unsigned int u, t_flags *flags);
+void	default_u_flag(unsigned int x, t_flags *flags);
+void	minus_u_flag(unsigned int x, t_flags *flags);
+void	u_negative_precision(unsigned int x, t_flags *flags);
+void	u_zero(t_flags *flags);
 
 void	ft_x_flag(unsigned long x, t_flags *flags);
 void	ft_p_flag(unsigned long x, t_flags *flags);
