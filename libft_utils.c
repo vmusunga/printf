@@ -6,13 +6,13 @@
 /*   By: vmusunga <vmusunga@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 15:13:41 by vmusunga          #+#    #+#             */
-/*   Updated: 2021/03/29 21:47:16 by vmusunga         ###   ########.fr       */
+/*   Updated: 2021/04/12 15:55:06 by vmusunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_strlen(const char *str)
+int	ft_strlen(const char *str)
 {
 	int x;
 
@@ -22,10 +22,12 @@ int		ft_strlen(const char *str)
 	return (x);
 }
 
-int		ft_nbrlen(long x)
+int	ft_nbrlen(long x)
 {
 	int i;
 	
+	if (x == 0)
+	return (1);
 	i = 0;
 	if (x < 0)
 	{
@@ -40,14 +42,14 @@ int		ft_nbrlen(long x)
 	return (i);
 }
 
-void		ft_putchar(char c, t_flags *flags)
+void	ft_putchar(char c, t_flags *flags)
 {
 	write(1, &c, 1);
 	flags->count++;
 	return ;
 }
 
-void		ft_putstr(char *s, t_flags *flags)
+void	ft_putstr(char *s, t_flags *flags)
 {
 	int i;
 
@@ -84,7 +86,7 @@ static int	ft_overflow(unsigned long long x, int sign)
 	return (2);
 }
 
-int			ft_atoi(const char *str, int *i)
+int	ft_atoi(const char *str, int *i)
 {
 	int					sign;
 	unsigned long long	x;
