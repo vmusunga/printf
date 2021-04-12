@@ -6,7 +6,7 @@
 /*   By: vmusunga <vmusunga@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 16:39:45 by vmusunga          #+#    #+#             */
-/*   Updated: 2021/04/06 18:16:59 by vmusunga         ###   ########.fr       */
+/*   Updated: 2021/04/12 11:47:53 by vmusunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	ft_putnbr(long nb, t_flags *flags)
 
 void	ft_putnbr_u(unsigned int nb, t_flags *flags)
 {
-	unsigned int n;
+	unsigned long n;
 
 	n = nb;
 	if (nb < 0)

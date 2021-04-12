@@ -6,7 +6,7 @@
 /*   By: vmusunga <vmusunga@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 15:10:15 by vmusunga          #+#    #+#             */
-/*   Updated: 2021/04/06 18:23:11 by vmusunga         ###   ########.fr       */
+/*   Updated: 2021/04/12 12:41:13 by vmusunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ void	ft_flags(const char *str, int *i, va_list v_list, t_flags *flags)
 	else if (str[*i] == '%')
 		ft_putchar('%', flags);
 	else if (str[*i] == 'u')
-		ft_u_flag(va_arg(v_list, unsigned int), flags);
+		return ;//ft_u_flag(va_arg(v_list, unsigned int), flags);
 	else if (str[*i] == 'x')
 		ft_x_flag(va_arg(v_list, unsigned long), flags);
 	else if (str[*i] == 'X')

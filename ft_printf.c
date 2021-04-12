@@ -6,7 +6,7 @@
 /*   By: vmusunga <vmusunga@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 12:25:08 by vmusunga          #+#    #+#             */
-/*   Updated: 2021/03/29 17:20:35 by vmusunga         ###   ########.fr       */
+/*   Updated: 2021/04/12 12:09:16 by vmusunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,6 @@ int	ft_printf(const char *str, ...)
 			ft_flags(str, &i, v_list, flags);
 	}
 	va_end(v_list);
+	free(flags);
 	return (flags->count);
 }
