@@ -6,22 +6,11 @@
 /*   By: vmusunga <vmusunga@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 15:10:15 by vmusunga          #+#    #+#             */
-/*   Updated: 2021/04/12 12:41:13 by vmusunga         ###   ########.fr       */
+/*   Updated: 2021/04/13 13:37:42 by vmusunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-void	ft_struct_init(t_flags *flags)
-{
-	flags->precision_bool = False;
-	flags->count = 0;
-	flags->dot = 0;
-	flags->minus = 0;
-	flags->precision = 1;
-	flags->zero = 0;
-	flags->width = 0;
-}
 
 void	precision_width_flags(const char *str, va_list v_list, t_flags *flags, int *i)
 {
@@ -43,14 +32,14 @@ void	precision_width_flags(const char *str, va_list v_list, t_flags *flags, int 
 		}
 		else if (ft_isdigit(str[*i]))
 			flags->precision = ft_atoi(str, i);
-		else
-			flags->precision = 0;		// !! default for d/i == 1 !!
 	}
-
-	if (flags->precision < 0)
+	if (flags->precision < 0)					//casse tout si pas la...
 		flags->precision_bool = False;
 	if (flags->width < 0)
+	{
+		flags->minus = 1;
 		flags->width *= -1;
+	}
 	return ;
 }
 
@@ -86,9 +75,7 @@ void	ft_flags(const char *str, int *i, va_list v_list, t_flags *flags)
 	else if (str[*i] == 'u')
 		return ;//ft_u_flag(va_arg(v_list, unsigned int), flags);
 	else if (str[*i] == 'x')
-		ft_x_flag(va_arg(v_list, unsigned long), flags);
-	else if (str[*i] == 'X')
-		return ;
+		ft_x_flag(va_arg(v_list, unsigned int), flags);
 	(*i)++;
 	return ;
 }
