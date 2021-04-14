@@ -6,7 +6,7 @@
 /*   By: vmusunga <vmusunga@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 15:13:41 by vmusunga          #+#    #+#             */
-/*   Updated: 2021/04/12 15:55:06 by vmusunga         ###   ########.fr       */
+/*   Updated: 2021/04/14 14:30:02 by vmusunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,26 @@ int	ft_nbrlen(long x)
 	while (x != 0)
 	{
 		x = x / 10;
+		i++;
+	}
+	return (i);
+}
+
+int	ft_hexalen(unsigned long x)
+{
+	int i;
+	
+	if (x == 0)
+	return (3);
+	i = 2;
+	if (x < 0)
+	{
+		i += 1;
+		x *= -1;
+	}
+	while (x != 0)
+	{
+		x = x / 16;
 		i++;
 	}
 	return (i);

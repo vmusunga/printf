@@ -6,7 +6,7 @@
 /*   By: vmusunga <vmusunga@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 15:13:38 by vmusunga          #+#    #+#             */
-/*   Updated: 2021/04/12 15:54:12 by vmusunga         ###   ########.fr       */
+/*   Updated: 2021/04/14 15:01:09 by vmusunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@
 int		main()
 {
 	int x = 0;
+	char *bite = NULL;
 	char *res = "abc";
-	printf("%d", ft_nbrlen(x));
+	printf("%d", ft_hexalen(x));
+	printf("%p", bite);
 	return (0);
 }
