@@ -6,7 +6,7 @@
 /*   By: vmusunga <vmusunga@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 12:23:15 by vmusunga          #+#    #+#             */
-/*   Updated: 2021/04/14 16:22:03 by vmusunga         ###   ########.fr       */
+/*   Updated: 2021/04/14 18:27:33 by vmusunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,11 +67,13 @@ void	minus_u_flag(unsigned int x, t_flags *flags);
 void	u_negative_precision(unsigned int x, t_flags *flags);
 void	u_zero(t_flags *flags);
 
-void	ft_x_flag(unsigned long x, t_flags *flags);
-void	ft_putnbr_base_x(int nbr, char *base, t_flags *flags);
+void	ft_x_flag(unsigned int x, t_flags *flags, int maj);
+int		ft_hexalen(unsigned int x);
+void	default_x_flag(unsigned int x, t_flags *flags, char *base);
+void	minus_x_flag(unsigned int x, t_flags *flags, char *base);
 
 void	ft_p_flag(unsigned long x, t_flags *flags);
-int		ft_hexalen(unsigned long x);
+int		ft_pointerlen(unsigned long x);
 void	ft_putnbr_base(int nbr, char *base, t_flags *flags);
 void	default_p_flag(unsigned long x, t_flags *flags);
 void	minus_p_flag(unsigned long x, t_flags *flags);

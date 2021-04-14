@@ -6,7 +6,7 @@
 /*   By: vmusunga <vmusunga@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 15:10:15 by vmusunga          #+#    #+#             */
-/*   Updated: 2021/04/14 17:14:52 by vmusunga         ###   ########.fr       */
+/*   Updated: 2021/04/14 18:34:02 by vmusunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,14 +73,11 @@ void	ft_flags(const char *str, int *i, va_list v_list, t_flags *flags)
 	else if (str[*i] == '%')
 		ft_putchar('%', flags);
 	else if (str[*i] == 'u')
-		return ;//ft_u_flag(va_arg(v_list, unsigned int), flags);
+		ft_u_flag(va_arg(v_list, unsigned int), flags);
 	else if (str[*i] == 'x')
-		ft_x_flag(va_arg(v_list, unsigned int), flags);
+		ft_x_flag(va_arg(v_list, unsigned int), flags, 0);
+	else if (str[*i] == 'X')
+		ft_x_flag(va_arg(v_list, unsigned int), flags, 1);
 	(*i)++;
 	return ;
 }
-
-/*void	ft_di_flag(int x, t_flags *flags)
-{
-	ft_putnbr(x, flags);
-}*/

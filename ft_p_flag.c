@@ -6,7 +6,7 @@
 /*   By: vmusunga <vmusunga@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/27 15:07:35 by vmusunga          #+#    #+#             */
-/*   Updated: 2021/04/14 16:24:11 by vmusunga         ###   ########.fr       */
+/*   Updated: 2021/04/14 18:13:19 by vmusunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ void	ft_p_flag(unsigned long x, t_flags *flags)
 		flags->zero = 0;
 	if (x == 0)
 		return (p_zero(x, flags));
-	if (flags->precision < ft_hexalen(x))
-		flags->width -= ft_hexalen(x);
+	if (flags->precision < ft_pointerlen(x))
+		flags->width -= ft_pointerlen(x);
 	else
 		flags->width -= (flags->precision);
 	if (flags->minus == 1)
@@ -48,7 +48,7 @@ void	default_p_flag(unsigned long x, t_flags *flags)
 	while (flags->width-- > 0)
 		ft_putchar(' ', flags);
 	ft_putstr("0x", flags);
-	while (flags->precision-- > ft_hexalen(x))
+	while (flags->precision-- > ft_pointerlen(x))
 			ft_putchar('0', flags);
 	ft_putnbr_base(x, base, flags);
 	return ;
@@ -60,7 +60,7 @@ void	minus_p_flag(unsigned long x, t_flags *flags)
 
 	base = "0123456789abcdef";
 	ft_putstr("0x", flags);
-	while (flags->precision-- > ft_hexalen(x))
+	while (flags->precision-- > ft_pointerlen(x))
 		ft_putchar('0', flags);
 	ft_putnbr_base(x, base, flags);
 	while (flags->width-- > 0)
@@ -73,12 +73,12 @@ void	p_zero(unsigned long x, t_flags *flags)
 	if (flags->minus)
 	{
 		ft_putstr("0x0", flags);
-		while (flags->width-- > ft_hexalen(x))
+		while (flags->width-- > ft_pointerlen(x))
 			ft_putchar(' ', flags);
 	}
 	else
 	{
-		while (flags->width-- > ft_hexalen(x))
+		while (flags->width-- > ft_pointerlen(x))
 			ft_putchar(' ', flags);
 		ft_putstr("0x0", flags);
 	}
