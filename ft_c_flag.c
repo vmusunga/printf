@@ -6,7 +6,7 @@
 /*   By: vmusunga <vmusunga@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/27 14:13:25 by vmusunga          #+#    #+#             */
-/*   Updated: 2021/03/27 15:00:29 by vmusunga         ###   ########.fr       */
+/*   Updated: 2021/04/14 18:41:50 by vmusunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_c_flag(char c, t_flags *flags)
 	{
 		ft_putchar(c, flags);
 		while (flags->width-- > 1)
-				ft_putchar(' ', flags);
+			ft_putchar(' ', flags);
 	}
 	else
 	{

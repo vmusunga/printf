@@ -6,7 +6,7 @@
 /*   By: vmusunga <vmusunga@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/27 15:07:35 by vmusunga          #+#    #+#             */
-/*   Updated: 2021/04/14 18:13:19 by vmusunga         ###   ########.fr       */
+/*   Updated: 2021/04/14 18:43:21 by vmusunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,21 +42,21 @@ void	ft_p_flag(unsigned long x, t_flags *flags)
 
 void	default_p_flag(unsigned long x, t_flags *flags)
 {
-	char *base;
+	char	*base;
 
 	base = "0123456789abcdef";
 	while (flags->width-- > 0)
 		ft_putchar(' ', flags);
 	ft_putstr("0x", flags);
 	while (flags->precision-- > ft_pointerlen(x))
-			ft_putchar('0', flags);
+		ft_putchar('0', flags);
 	ft_putnbr_base(x, base, flags);
 	return ;
 }
 
 void	minus_p_flag(unsigned long x, t_flags *flags)
 {
-	char *base;
+	char	*base;
 
 	base = "0123456789abcdef";
 	ft_putstr("0x", flags);

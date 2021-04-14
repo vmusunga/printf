@@ -6,7 +6,7 @@
 /*   By: vmusunga <vmusunga@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/27 15:39:28 by vmusunga          #+#    #+#             */
-/*   Updated: 2021/04/14 18:28:27 by vmusunga         ###   ########.fr       */
+/*   Updated: 2021/04/14 18:44:33 by vmusunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_x_flag(unsigned int x, t_flags *flags, int maj)
 {
-	char *base;															// MALLOC NEEDED??
+	char	*base;										//* MALLOC NEEDED?? *//
 	if (maj == 0)
 		base = "0123456789abcdef";
 	else
@@ -41,7 +41,7 @@ void	default_x_flag(unsigned int x, t_flags *flags, char *base)
 	if (flags->zero)
 	{
 		while (flags->width-- > 0)
-				ft_putchar('0', flags);
+			ft_putchar('0', flags);
 	}
 	else
 	{
@@ -49,7 +49,7 @@ void	default_x_flag(unsigned int x, t_flags *flags, char *base)
 			ft_putchar(' ', flags);
 	}
 	while (flags->precision-- > ft_hexalen(x))
-			ft_putchar('0', flags);
+		ft_putchar('0', flags);
 	ft_putnbr_base(x, base, flags);
 	return ;
 }

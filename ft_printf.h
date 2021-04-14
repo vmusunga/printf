@@ -6,7 +6,7 @@
 /*   By: vmusunga <vmusunga@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 12:23:15 by vmusunga          #+#    #+#             */
-/*   Updated: 2021/04/14 18:27:33 by vmusunga         ###   ########.fr       */
+/*   Updated: 2021/04/14 18:53:40 by vmusunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,17 @@
 # include "stdlib.h"
 # include "limits.h"
 
-typedef enum	{True, False}	t_bool;
+typedef enum e_bools {True, False}	t_bool;
 
-typedef struct	s_flags
+typedef struct s_flags
 {
-	t_bool precision_bool;
-	int count;
-	int minus;
-	int precision;
-	int dot;
-	int zero;
-	int width;
+	t_bool	precision_bool;
+	int		count;
+	int		minus;
+	int		precision;
+	int		dot;
+	int		zero;
+	int		width;
 }				t_flags;
 
 int		ft_printf(const char *str, ...);
@@ -78,7 +78,6 @@ void	ft_putnbr_base(int nbr, char *base, t_flags *flags);
 void	default_p_flag(unsigned long x, t_flags *flags);
 void	minus_p_flag(unsigned long x, t_flags *flags);
 void	p_zero(unsigned long x, t_flags *flags);
-
 
 char	*ft_strdup(const char *s1);
 char	*ft_strjoin(char *s1, char *s2);
