@@ -6,7 +6,7 @@
 /*   By: vmusunga <vmusunga@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 14:32:49 by vmusunga          #+#    #+#             */
-/*   Updated: 2021/04/14 18:06:50 by vmusunga         ###   ########.fr       */
+/*   Updated: 2021/04/15 15:02:10 by vmusunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,22 +58,38 @@ int main()
 	}
 */
 
-/*		_DUI_
-	//ft_printf(" 0*%0-*.*d*0 0*%0*.*d*0 \n", 2, 6, 102, 21, 10, -101);
-	//printf(" 0*%0-*.*d*0 0*%0*.*d*0 \n", 2, 6, 102, 21, 10, -101);
+	//	_DUI_
 
-	//ft_printf(" --0*%-0*.20d*0 0*%-0*.10d*0-- \n", -21, CHAR_MAX, 21, CHAR_MIN);
-	//printf(" --0*%-0*.20d*0 0*%-0*.10d*0-- \n", -21, CHAR_MAX, 21, CHAR_MIN);
+	ft_printf(" 0*%0-*.*d*0 0*%0*.*d*0 \n", 2, 6, 102, 21, 10, -101); //13
+	printf(" 0*%0-*.*d*0 0*%0*.*d*0 \n", 2, 6, 102, 21, 10, -101);
 
-	//ft_printf(" --0*%-0*.4d*0 0*%-0*.4d*0-- \n", -21, CHAR_MAX, 7, CHAR_MIN);
+	ft_printf(" --0*%-0*.20d*0 0*%-0*.10d*0-- \n", -21, CHAR_MAX, 21, CHAR_MIN);  //19
+	printf(" --0*%-0*.20d*0 0*%-0*.10d*0-- \n", -21, CHAR_MAX, 21, CHAR_MIN);
+
+	//ft_printf("%0*d\n", -7, -54);
+	//printf("%0*d\n", -7, -54);
+
+	//ft_printf(" --0*%-0*.4d*0 0*%-0*.4d*0-- \n", -21, CHAR_MAX, 7, CHAR_MIN);  //22
 	//printf(" --0*%-0*.4d*0 0*%-0*.4d*0-- \n", -21, CHAR_MAX, 7, CHAR_MIN);
 
-	ft_printf("%9.2d\n", UINT_MAX);
-	printf("%9.2d\n", UINT_MAX);
+	//ft_printf("%9.2d\n", UINT_MAX);		//23
+	//printf("%9.2d\n", UINT_MAX);
+
+	//ft_printf("%-9.2d\n", UINT_MAX);		//35
+	//printf("%-9.2d\n", UINT_MAX);
+
+	//ft_printf("%-11.10d\n", UINT_MAX);		//44
+	//printf("%-11.10d\n", UINT_MAX);
+
+	//ft_printf("%09.2d\n", UINT_MAX);		//47
+	//printf("%09.2d\n", UINT_MAX);
+
+	//ft_printf("%011.10d\n", UINT_MAX);		//56
+	//printf("%011.10d\n", UINT_MAX);
 
 	return (0);
 }
-*/
+
 
 /*
 		_D_I_U_
@@ -166,8 +182,6 @@ TEST(1, print(" %d ", 0));
         TEST(84, print("%0*d", -7, -54));
 */
 
-	ft_printf(" %-.2x \n", 0);
-	printf(" %-.2x \n", 0);
 /*		_x_X_
  TEST(3, print(" %-.2x ", 0));
         TEST(4, print(" %-2.2x ", 0));
@@ -223,4 +237,3 @@ TEST(1, print(" %d ", 0));
         TEST(54, print("%011.1x", UINT_MAX));
         TEST(55, print("%011.2x", UINT_MAX));
 */
-}
