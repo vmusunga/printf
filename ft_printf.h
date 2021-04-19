@@ -6,7 +6,7 @@
 /*   By: vmusunga <vmusunga@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 12:23:15 by vmusunga          #+#    #+#             */
-/*   Updated: 2021/04/19 11:22:13 by vmusunga         ###   ########.fr       */
+/*   Updated: 2021/04/19 13:07:12 by vmusunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ void	precision_width_flags(const char *str, va_list v_list,
 void	ft_flags(const char *str, int *i, va_list v_list, t_flags *flags);
 
 void	ft_c_flag(char c, t_flags *flags);
+void	ft_pourcent_flag(t_flags *flags);
 
 void	ft_s_flag(char *s, t_flags *flags);
 void	default_width(char *s, t_flags *flags);
@@ -75,7 +76,7 @@ void	minus_x_flag(unsigned int x, t_flags *flags, char *base);
 
 void	ft_p_flag(unsigned long x, t_flags *flags);
 int		ft_pointerlen(unsigned long x);
-void	ft_putnbr_base(int nbr, char *base, t_flags *flags);
+void	ft_putnbr_base(long nbr, char *base, t_flags *flags);
 void	default_p_flag(unsigned long x, t_flags *flags);
 void	minus_p_flag(unsigned long x, t_flags *flags);
 void	p_zero(unsigned long x, t_flags *flags);

@@ -1,23 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_printf.c                                      :+:      :+:    :+:   */
+/*   ft_pourcent_flag.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vmusunga <vmusunga@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/23 15:13:38 by vmusunga          #+#    #+#             */
-/*   Updated: 2021/04/14 17:48:53 by vmusunga         ###   ########.fr       */
+/*   Created: 2021/04/19 12:27:23 by vmusunga          #+#    #+#             */
+/*   Updated: 2021/04/19 12:41:25 by vmusunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		main()
+void	ft_pourcent_flag(t_flags *flags)
 {
-	int x = 0;
-	char *bite = NULL;
-	char *res = "abc";
-	//printf("%d", ft_hexalen(x));
-	printf("%x", 0);
-	return (0);
+	if (flags->minus)
+	{
+		ft_putchar('%', flags);
+		while (flags->width-- > 1)
+			ft_putchar(' ', flags);
+	}
+	else
+	{
+		if (flags->zero)
+		{
+			while (flags->width-- > 1)
+				ft_putchar('0', flags);
+		}
+		else
+		{
+			while (flags->width-- > 1)
+				ft_putchar(' ', flags);
+		}
+		ft_putchar('%', flags);
+	}
+	return ;
 }

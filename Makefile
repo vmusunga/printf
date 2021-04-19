@@ -6,7 +6,7 @@
 #    By: vmusunga <vmusunga@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/02 12:31:33 by vmusunga          #+#    #+#              #
-#    Updated: 2021/04/19 11:14:34 by vmusunga         ###   ########.fr        #
+#    Updated: 2021/04/19 12:31:38 by vmusunga         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,7 @@ SRCS	=		ft_printf.c\
 				ft_flags_utils.c\
 				ft_s_flag.c\
 				ft_c_flag.c\
+				ft_pourcent_flag.c\
 				ft_p_flag.c\
 				ft_x_flag.c\
 				ft_di_flag.c\

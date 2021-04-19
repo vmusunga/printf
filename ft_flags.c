@@ -6,7 +6,7 @@
 /*   By: vmusunga <vmusunga@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 15:10:15 by vmusunga          #+#    #+#             */
-/*   Updated: 2021/04/15 13:34:45 by vmusunga         ###   ########.fr       */
+/*   Updated: 2021/04/19 13:01:23 by vmusunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,10 @@ void	precision_width_flags(const char *str, va_list v_list, t_flags *flags, int 
 			flags->precision = ft_atoi(str, i);
 	}
 	if (flags->precision < 0)					//casse tout si pas la...
+	{
+		flags->precision = 0;
 		flags->precision_bool = False;
+	}
 	if (flags->width < 0)
 	{
 		flags->minus = 1;
@@ -71,7 +74,7 @@ void	ft_flags(const char *str, int *i, va_list v_list, t_flags *flags)
 	else if (str[*i] == 'd' || str[*i] == 'i')
 		ft_di_flag(va_arg(v_list, int), flags);
 	else if (str[*i] == '%')
-		ft_putchar('%', flags);
+		ft_pourcent_flag(flags);
 	else if (str[*i] == 'u')
 		ft_u_flag(va_arg(v_list, unsigned int), flags);
 	else if (str[*i] == 'x')

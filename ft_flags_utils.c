@@ -6,16 +6,16 @@
 /*   By: vmusunga <vmusunga@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 16:39:45 by vmusunga          #+#    #+#             */
-/*   Updated: 2021/04/14 18:48:51 by vmusunga         ###   ########.fr       */
+/*   Updated: 2021/04/19 13:06:55 by vmusunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putnbr_base(int nbr, char *base, t_flags *flags)
+void	ft_putnbr_base(long nbr, char *base, t_flags *flags)
 {
-	unsigned int	l;
-	unsigned int	n;
+	unsigned long	l;
+	unsigned long	n;
 
 	l = ft_strlen(base);
 	n = nbr;
