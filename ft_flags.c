@@ -6,13 +6,14 @@
 /*   By: vmusunga <vmusunga@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 15:10:15 by vmusunga          #+#    #+#             */
-/*   Updated: 2021/04/19 13:01:23 by vmusunga         ###   ########.fr       */
+/*   Updated: 2021/04/19 14:15:33 by vmusunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	precision_width_flags(const char *str, va_list v_list, t_flags *flags, int *i)
+void	precision_width_flags(const char *str, va_list v_list,
+		t_flags *flags, int *i)
 {
 	if (str[*i] == '*')
 	{
@@ -33,7 +34,7 @@ void	precision_width_flags(const char *str, va_list v_list, t_flags *flags, int 
 		else if (ft_isdigit(str[*i]))
 			flags->precision = ft_atoi(str, i);
 	}
-	if (flags->precision < 0)					//casse tout si pas la...
+	if (flags->precision < 0)
 	{
 		flags->precision = 0;
 		flags->precision_bool = False;

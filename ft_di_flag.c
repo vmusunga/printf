@@ -6,7 +6,7 @@
 /*   By: vmusunga <vmusunga@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 18:14:43 by vmusunga          #+#    #+#             */
-/*   Updated: 2021/04/19 12:17:42 by vmusunga         ###   ########.fr       */
+/*   Updated: 2021/04/19 14:13:11 by vmusunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,16 +37,15 @@ void	ft_di_flag(long x, t_flags *flags)
 
 void	default_di_flag(long x, t_flags *flags)
 {
-
 	if (flags->zero)
 	{
 		if (x < 0)
-	{
-		ft_putchar('-', flags);
-		x *= -1;
-	}
+		{
+			ft_putchar('-', flags);
+			x *= -1;
+		}
 		while (flags->width-- > 0)
-				ft_putchar('0', flags);
+			ft_putchar('0', flags);
 	}
 	else
 	{
@@ -60,7 +59,7 @@ void	default_di_flag(long x, t_flags *flags)
 		x *= -1;
 	}
 	while (flags->precision-- > ft_nbrlen(x))
-			ft_putchar('0', flags);
+		ft_putchar('0', flags);
 	ft_putnbr(x, flags);
 	return ;
 }
@@ -86,7 +85,7 @@ void	negative_precision(long x, t_flags *flags)
 	if (flags->minus == 0 && flags->zero == 0)
 	{
 		while (flags->width-- > 0)
-		ft_putchar(' ', flags);
+			ft_putchar(' ', flags);
 	}
 	if (flags->zero)
 	{

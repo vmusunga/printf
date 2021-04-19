@@ -6,7 +6,7 @@
 /*   By: vmusunga <vmusunga@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/27 15:39:28 by vmusunga          #+#    #+#             */
-/*   Updated: 2021/04/14 18:44:33 by vmusunga         ###   ########.fr       */
+/*   Updated: 2021/04/19 14:17:42 by vmusunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 void	ft_x_flag(unsigned int x, t_flags *flags, int maj)
 {
-	char	*base;										//* MALLOC NEEDED?? *//
+	char	*base;
+
 	if (maj == 0)
 		base = "0123456789abcdef";
 	else
