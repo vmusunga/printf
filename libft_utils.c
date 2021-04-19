@@ -6,83 +6,11 @@
 /*   By: vmusunga <vmusunga@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 15:13:41 by vmusunga          #+#    #+#             */
-/*   Updated: 2021/04/14 18:33:12 by vmusunga         ###   ########.fr       */
+/*   Updated: 2021/04/19 11:14:11 by vmusunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-int	ft_strlen(const char *str)
-{
-	if (!str)
-		return(-1);
-	int x;
-
-	x = 0;
-	while (str[x])
-		x++;
-	return (x);
-}
-
-int	ft_nbrlen(long x)
-{
-	int i;
-	
-	if (x == 0)
-	return (1);
-	i = 0;
-	if (x < 0)
-	{
-		i = 1;
-		x *= -1;
-	}
-	while (x != 0)
-	{
-		x = x / 10;
-		i++;
-	}
-	return (i);
-}
-
-int	ft_pointerlen(unsigned long x)
-{
-	int i;
-	
-	if (x == 0)
-	return (3);
-	i = 2;
-	if (x < 0)
-	{
-		i += 1;
-		x *= -1;
-	}
-	while (x != 0)
-	{
-		x = x / 16;
-		i++;
-	}
-	return (i);
-}
-
-int	ft_hexalen(unsigned int x)
-{
-	int i;
-	
-	if (x == 0)
-	return (1);
-	i = 0;
-	if (x < 0)
-	{
-		i += 1;
-		x *= -1;
-	}
-	while (x != 0)
-	{
-		x = x / 16;
-		i++;
-	}
-	return (i);
-}
 
 void	ft_putchar(char c, t_flags *flags)
 {
@@ -93,7 +21,7 @@ void	ft_putchar(char c, t_flags *flags)
 
 void	ft_putstr(char *s, t_flags *flags)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if ((!s))
@@ -108,7 +36,7 @@ void	ft_putstr(char *s, t_flags *flags)
 
 int	ft_isdigit(char c)
 {
-	if ( c >= '0' && c <= '9')
+	if (c >= '0' && c <= '9')
 		return (1);
 	else
 		return (0);
@@ -116,8 +44,8 @@ int	ft_isdigit(char c)
 
 static int	ft_overflow(unsigned long long x, int sign)
 {
-	unsigned long long min;
-	unsigned long long max;
+	unsigned long long	min;
+	unsigned long long	max;
 
 	min = 9223372036854775808U;
 	max = 9223372036854775807U;
@@ -135,7 +63,7 @@ int	ft_atoi(const char *str, int *i)
 
 	sign = 1;
 	while (str[*i] && (str[*i] == ' ' || str[*i] == '\t' || str[*i] == '\n'
-				|| str[*i] == '\v' || str[*i] == '\f' || str[*i] == '\r'))
+			|| str[*i] == '\v' || str[*i] == '\f' || str[*i] == '\r'))
 		(*i)++;
 	if (str[*i] == '+' || str[*i] == '-')
 	{

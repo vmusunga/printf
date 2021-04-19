@@ -6,7 +6,7 @@
 /*   By: vmusunga <vmusunga@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 12:23:15 by vmusunga          #+#    #+#             */
-/*   Updated: 2021/04/14 18:53:40 by vmusunga         ###   ########.fr       */
+/*   Updated: 2021/04/19 11:22:13 by vmusunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,8 @@ void	ft_putnbr_u(unsigned int nb, t_flags *flags);
 
 void	ft_check_flags(const char *str, t_flags *flags, int *i, va_list v_list);
 void	ft_struct_init(t_flags *flags);
-void	precision_width_flags(const char *str, va_list v_list, t_flags *flags, int *i);
+void	precision_width_flags(const char *str, va_list v_list,
+			t_flags *flags, int *i);
 
 void	ft_flags(const char *str, int *i, va_list v_list, t_flags *flags);
 

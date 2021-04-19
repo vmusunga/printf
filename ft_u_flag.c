@@ -6,7 +6,7 @@
 /*   By: vmusunga <vmusunga@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 17:24:30 by vmusunga          #+#    #+#             */
-/*   Updated: 2021/04/13 13:32:36 by vmusunga         ###   ########.fr       */
+/*   Updated: 2021/04/19 11:04:19 by vmusunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	default_u_flag(unsigned int u, t_flags *flags)
 	if (flags->zero)
 	{
 		while (flags->width-- > 0)
-				ft_putchar('0', flags);
+			ft_putchar('0', flags);
 	}
 	else
 	{
@@ -44,7 +44,7 @@ void	default_u_flag(unsigned int u, t_flags *flags)
 			ft_putchar(' ', flags);
 	}
 	while (flags->precision-- > ft_nbrlen(u))
-			ft_putchar('0', flags);
+		ft_putchar('0', flags);
 	ft_putnbr_u(u, flags);
 	return ;
 }
@@ -64,7 +64,7 @@ void	u_negative_precision(unsigned int u, t_flags *flags)
 	if (flags->minus == 0 && flags->zero == 0)
 	{
 		while (flags->width-- > 0)
-		ft_putchar(' ', flags);
+			ft_putchar(' ', flags);
 	}
 	if (flags->zero)
 	{
