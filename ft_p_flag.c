@@ -6,7 +6,7 @@
 /*   By: vmusunga <vmusunga@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/27 15:07:35 by vmusunga          #+#    #+#             */
-/*   Updated: 2021/04/19 12:54:54 by vmusunga         ###   ########.fr       */
+/*   Updated: 2021/04/26 10:44:21 by vmusunga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,17 +70,29 @@ void	minus_p_flag(unsigned long x, t_flags *flags)
 
 void	p_zero(unsigned long x, t_flags *flags)
 {
+	int	d;
+
+	d = ft_pointerlen(x);
+	d = 3;
+	if (flags->precision_bool == True)
+		d = 2;
 	if (flags->minus)
 	{
-		ft_putstr("0x0", flags);
-		while (flags->width-- > ft_pointerlen(x))
+		if (flags->precision_bool == True)
+			ft_putstr("0x", flags);
+		else
+			ft_putstr("0x0", flags);
+		while (flags->width-- > d)
 			ft_putchar(' ', flags);
 	}
 	else
 	{
-		while (flags->width-- > ft_pointerlen(x))
+		while (flags->width-- > d)
 			ft_putchar(' ', flags);
-		ft_putstr("0x0", flags);
+		if (flags->precision_bool == True)
+			ft_putstr("0x", flags);
+		else
+			ft_putstr("0x0", flags);
 	}
 	return ;
 }
